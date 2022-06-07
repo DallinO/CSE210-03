@@ -6,6 +6,7 @@ namespace Jumper.Classes
     public class Word
     {
         private List<string> wordList = new List<string>();
+        string word;
         Random rnd = new Random();
         public Word()
         {
@@ -24,8 +25,18 @@ namespace Jumper.Classes
         public string GetWord()
         {
             int x = rnd.Next(wordList.Count);
-            string word = wordList[x];
+            word = wordList[x];
             return(word);
+        }
+
+        public List<string> getCharacterList()
+        {
+            List<string> characterList = new List<string>();
+            foreach (char letter in word)
+            {
+                characterList.Add(letter.ToString());
+            }
+            return(characterList);
         }
     }
 }
