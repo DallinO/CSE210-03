@@ -5,9 +5,12 @@ namespace Jumper.Classes
 {
     public class Terminal
     {
-        static void Main(string[] args)
+        public void TerminalDisplay(Game game)
         {
-            
+           foreach (string line in game.parachuteList)
+           {
+               Console.WriteLine(line);
+           }
         }
     }
 }
