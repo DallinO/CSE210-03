@@ -15,10 +15,27 @@ namespace Jumper.Classes
 
         public void displayWord(Game game)
         {
-            foreach (string letter in game.characterList)
+            foreach (string letter1 in game.characterList)
             {
-                Console.Write($"{letter} ");
+                foreach (string letter2 in game.guessList)
+                {
+                    if (game.characterList == game.guessList)
+                    {
+                        Console.Write($"{letter1} ");
+                        game.gameOver = game.gameOver + 1;
+                    }
+                    else
+                    {
+                        Console.Write("_ ");
+                    }
+                }
+                
             }
+        }
+
+        public void guessPrompt()
+        {
+            Console.Write("Guess a letter [a-z]: ");
         }
     }
 }
