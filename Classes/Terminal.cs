@@ -17,25 +17,42 @@ namespace Jumper.Classes
         {
             foreach (string letter1 in game.characterList)
             {
+                bool correct = false;
                 foreach (string letter2 in game.guessList)
                 {
-                    if (game.characterList == game.guessList)
+                    if (letter1.ToUpper() == letter2.ToUpper())
                     {
                         Console.Write($"{letter1} ");
-                        game.gameOver = game.gameOver + 1;
+                        correct = true;
                     }
-                    else
-                    {
-                        Console.Write("_ ");
-                    }
+                }
+                if (correct == false)
+                {
+                    Console.Write("_ ");
                 }
                 
             }
+            Console.WriteLine("\n");
         }
 
         public void guessPrompt()
         {
             Console.Write("Guess a letter [a-z]: ");
+        }
+
+        public void EndScreen(Game game)
+        {
+            
+            if (game.gameOver == 4)
+            {
+                displayParachute(game);
+                Console.WriteLine("GAME OVER!");
+            }
+            else
+            {
+                displayWord(game);
+                Console.WriteLine("YOU WIN!");
+            }
         }
     }
 }

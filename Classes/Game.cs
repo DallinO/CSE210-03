@@ -11,6 +11,7 @@ namespace Jumper.Classes
         Parachute parachute = new Parachute();
         Word word = new Word();
         public int gameOver = 0;
+        public int win = 0;
         Terminal display = new Terminal();
         public Game()
         {
@@ -24,16 +25,35 @@ namespace Jumper.Classes
             display.guessPrompt();
             string guess = Console.ReadLine();
             guessList.Add(guess);
+            bool correct = false;
+
+            foreach (string letter in characterList)
+            {
+                if (letter.ToUpper() == guess.ToUpper())
+                {
+                    correct = true;
+                }
+            }
+            if (correct == false)
+            {
+                gameOver = gameOver + 1;
+                parachuteList.Remove(parachuteList[0]);
+            }
+            if (correct == true)
+            {
+                win = win + 1;
+            }
         }
 
         public void StartGame()
         {
-            while (gameOver != 5)
+            while (gameOver != 4 && win != 5)
             {
                 display.displayWord(this);
                 display.displayParachute(this);
                 Guess();
             }
+            display.EndScreen(this);
         }
 
 

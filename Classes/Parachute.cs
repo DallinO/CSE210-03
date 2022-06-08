@@ -15,6 +15,7 @@ namespace Jumper.Classes
             parachute.Add("  O  ");
             parachute.Add(" /|\\ ");
             parachute.Add(" / \\ ");
+            parachute.Add("     ");
         }
 
         public List<string> GetParachute()
