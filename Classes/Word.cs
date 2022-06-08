@@ -8,8 +8,8 @@ namespace Jumper.Classes
     {
         // Variables
         private List<string> wordList = new List<string>();
-        string word;
-        Random rnd = new Random();
+        private string word;
+        private Random rnd = new Random();
         
         // The constructor generates the list of words.
         public Word()

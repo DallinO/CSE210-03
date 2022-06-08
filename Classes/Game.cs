@@ -11,11 +11,11 @@ namespace Jumper.Classes
         public List<string> characterList = new List<string>();
         public List<string> parachuteList = new List<string>();
         public List<string> guessList = new List<string>();
-        Parachute parachute = new Parachute();
-        Word word = new Word();
+        private Parachute parachute = new Parachute();
+        private Word word = new Word();
         public int gameOver = 0;
         public int win = 0;
-        Terminal display = new Terminal();
+        private Terminal display = new Terminal();
 
         // The class constructor. Creates a parachute and word object.
         public Game()
