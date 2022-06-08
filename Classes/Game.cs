@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 namespace Jumper.Classes
 {
+    // This is the primary class that facilitates the game, creating objects
+    // and housing the main variables that are used.
     public class Game
     {
+        // Variables
         public List<string> characterList = new List<string>();
         public List<string> parachuteList = new List<string>();
         public List<string> guessList = new List<string>();
@@ -13,6 +16,8 @@ namespace Jumper.Classes
         public int gameOver = 0;
         public int win = 0;
         Terminal display = new Terminal();
+
+        // The class constructor. Creates a parachute and word object.
         public Game()
         {
             parachuteList = parachute.GetParachute();
@@ -20,6 +25,8 @@ namespace Jumper.Classes
             characterList = word.getCharacterList();
         }
 
+        // This method is responsible for the guess action of the game and
+        // dtermines if the guess is correct or wrong.
         public void Guess()
         {
             display.guessPrompt();
@@ -45,6 +52,8 @@ namespace Jumper.Classes
             }
         }
 
+        // This method creates the loop responsible for keeping the game going
+        // until the user loses or wins.
         public void StartGame()
         {
             while (gameOver != 4 && win != 5)

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 
 namespace Jumper.Classes
 {
+    // This class generates and returns the parachute display.
     public class Parachute
     {
+        // Variables
         private List<string> parachute = new List<string>();
+
+        // Generates parachute string list.
         public Parachute()
         {
             parachute.Add(" ___ ");
@@ -18,6 +22,7 @@ namespace Jumper.Classes
             parachute.Add("     ");
         }
 
+        // Returns the parachute list.
         public List<string> GetParachute()
         {
             return(parachute);

@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
 
+
+
 namespace Jumper.Classes
 {
+    //  This class's function is to facilitate interaction between the display
+    //   terminal and the user.
     public class Terminal
     {
+        // Displays the parachute.
         public void displayParachute(Game game)
         {
            foreach (string line in game.parachuteList)
@@ -13,6 +18,8 @@ namespace Jumper.Classes
            }
         }
 
+        // Displays the word one letter at a time if the user has guessed the
+        // letter, otherwise it displays an underscore.
         public void displayWord(Game game)
         {
             foreach (string letter1 in game.characterList)
@@ -35,11 +42,13 @@ namespace Jumper.Classes
             Console.WriteLine("\n");
         }
 
+        // Displays the guess prompt
         public void guessPrompt()
         {
             Console.Write("Guess a letter [a-z]: ");
         }
 
+        // Displays an endscreen depending on whether the user won or lost.
         public void EndScreen(Game game)
         {
             

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 
 namespace Jumper.Classes
 {
+    // The "Word" class returns a randomly selected word. 
     public class Word
     {
+        // Variables
         private List<string> wordList = new List<string>();
         string word;
         Random rnd = new Random();
+        
+        // The constructor generates the list of words.
         public Word()
         {
             wordList.Add("Money");
@@ -22,6 +26,7 @@ namespace Jumper.Classes
             wordList.Add("Motor");
         }
 
+        // Returns a random word from the list.
         public string GetWord()
         {
             int x = rnd.Next(wordList.Count);
@@ -29,6 +34,7 @@ namespace Jumper.Classes
             return(word);
         }
 
+        // Creates a character list from the selected word.
         public List<string> getCharacterList()
         {
             List<string> characterList = new List<string>();
